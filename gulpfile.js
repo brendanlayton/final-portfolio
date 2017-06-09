@@ -68,13 +68,13 @@ gulp.task('minifyStyles', ['process-css'], function() {
 });
 
 gulp.task('clean', function() {
-	del(['dist', 'js/scripts*.js', 'css/styles*.css']);
+	del(['brendanlayton.github.io', 'js/scripts*.js', 'css/styles*.css']);
 });
 
 
 gulp.task('build', ['minifyScripts', 'minifyStyles', 'inlinesource'], function() {
 	return gulp.src(['css/styles.min.css.gz', 'js/scripts.min.js.gz', 'index.html', 'img/**', 'icons/**'], { base: './'})
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('brendanlayton.github.io'));
 });
 
 gulp.task('default', ['clean'], function() {
